@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ministério Gratos</title>
+  <link rel="stylesheet" href="css.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <!-- CABEÇALHO FIXO -->
+  <header class="cabecalho-fixo">
+    
+    <!-- MENU COM IMAGEM -->
+    <nav class="menu-fixo">
+      <div class="menu-container">
+        <img src="logo.png.jpg" alt="Ministerio Gratos" class="logo-menu" />
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="contato.html">Redes Sociais</a></li>
+          <li><a href="mensagens.html">Oração</a></li>
+          <li><a href="horarios.html">Endereço</a></li>
+          <li><a href="novos.membros.html">Caminhe conosco</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- GALERIA -->
+  <div class="swiper-container galeria-fotos">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="foto13.jpg" alt="foto 1"></div>
+      <div class="swiper-slide"><img src="foto15.jpg" alt="foto 2"></div>
+      <div class="swiper-slide"><img src="foto18.jpg" alt="foto 3"></div>
+      <div class="swiper-slide"><img src="foto17.jpg" alt="foto 4"></div>
+      <div class="swiper-slide"><img src="foto12.jpg" alt="foto 4"></div>
+      <div class="swiper-slide"><img src="foto19.jpg" alt="foto 4"></div>
+      <div class="swiper-slide"><img src="foto14.jpg" alt="foto 4"></div>
+      <div class="swiper-slide"><img src="foto16.jpg" alt="foto 4"></div>
+      <div class="swiper-slide"><img src="foto9.jpg" alt="foto 4"></div>
+      <div class="swiper-slide"><img src="foto6.jpg" alt="foto 4"></div>
+      <div class="swiper-slide"><img src="foto2.jpg" alt="foto 4"></div>
+      <div class="swiper-slide"><img src="foto10.jpg" alt="foto 4"></div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <section class="principal">
+    <div class="container">
+      <h1>ministério</h1>
+      <h2>GRATOS</h2>
+      <p class="cursivo"> Seja bem vindo!</p>
+    
+  
+      <!-- Card interativo -->
+      <div class="card-historia" onclick="abrirModal()">
+        <h3>NOSSA HISTÓRIA</h3>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Modal oculto inicialmente -->
+  <div id="modalHistoria" class="modal">
+    <div class="modal-conteudo">
+      <span class="fechar" onclick="fecharModal()">&times;</span>
+      <h2>Nossa História</h2>
+      <p>Uma breve história do nosso ministério, uma igreja que nasceu no coração de Deus.</p>
+      <p>Tudo começou com um sonho, Deus revelou ao Pastor Rodrigo uma visão: uma igreja com uma placa onde se lia “Gratos”. A partir dessa experiência divina, nasceu não apenas um nome, mas um propósito. Assim surgiu o Ministério Gratos — uma igreja fundamentada na gratidão, na obediência e no desejo de viver com propósito.
+      </p>
+      <p>O início foi simples, mas cheio de significado. Alguns homens reunidos em torno de uma mesa, uma vez por semana, como um ministério de louvor. Ali, aprenderam e praticaram princípios poderosos como semeadura, maturidade e excelência — valores que continuam sendo a base da nossa caminhada até hoje.
+      </p>
+      <p>O Gratos é mais do que uma igreja, é uma família que cultiva a presença de Deus, cresce em comunhão e se move em direção ao propósito eterno.
+      </p>
+    </div>
+  </div>
+  <section class="versiculo-destaque">
+    <div class="versiculo-conteudo">
+      <h2>Versículo do Dia</h2>
+      <blockquote id="versiculo">Carregando versículo...</blockquote>
+    </div>
+  </section>
+  <section class="principios">
+    <div class="overlay"></div>
+    <h2>Princípios da Igreja</h2>
+    <div class="cards-principios">
+      <div class="card-principio" onclick="abrirModalPrincipio('excelencia')">
+        <img src="excelencia.jpg" alt="Excelência">
+        <h3>Excelência</h3>
+      </div>
+      <div class="card-principio" onclick="abrirModalPrincipio('semeadura')">
+        <img src="semeadura.jpg" alt="Semeadura">
+        <h3>Semeadura</h3>
+      </div>
+      <div class="card-principio" onclick="abrirModalPrincipio('maturidade')">
+        <img src="maturidade.jpg" alt="Maturidade">
+        <h3>Maturidade</h3>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- Modal dos Princípios -->
+  <div id="modalPrincipio" class="modal">
+    <div class="modal-conteudo">
+      <span class="fechar" onclick="fecharModalPrincipio()">&times;</span>
+      <h2 id="tituloModalPrincipio"></h2>
+      <p id="textoModalPrincipio"></p>
+    </div>
+  </div>
+  
+  <script>
+    function abrirModal() {
+      document.getElementById('modalHistoria').style.display = 'block';
+    }
+  
+    function fecharModal() {
+      document.getElementById('modalHistoria').style.display = 'none';
+    }
+  
+    // Fecha o modal ao clicar fora
+    window.onclick = function(event) {
+      const modal = document.getElementById('modalHistoria');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
+  
+  <script>
+    function abrirModalPrincipio(tipo) {
+      const titulo = document.getElementById('tituloModalPrincipio');
+      const texto = document.getElementById('textoModalPrincipio');
+      if (tipo === 'excelencia') {
+  titulo.textContent = 'Excelência';
+  texto.innerHTML = `
+    Servir a Deus com excelência é oferecer o nosso melhor, não por vaidade, mas por reverência. Ele é digno de tudo que há de mais puro, verdadeiro e dedicado em nós.<br><br>
+
+    📖 “E tudo quanto fizerdes, fazei-o de todo o coração, como ao Senhor…”<br>
+    <em>(Colossenses 3:23)</em><br><br>
+
+    Na presença de um Deus tão grandioso, não podemos entregar algo relaxado ou pela metade. A excelência expressa honra, amor e temor ao Senhor.<br><br>
+
+    📖 “Tudo deve ser feito com decência e ordem.”<br>
+    <em>(1 Coríntios 14:40)</em><br><br>
+
+    Buscar excelência é reconhecer: Deus merece o melhor.
+  `;
+} else if (tipo === 'semeadura') {
+  titulo.textContent = 'Semeadura';
+  texto.innerHTML = `
+    Tudo que plantamos no Reino gera frutos. A semeadura é uma atitude de fé — lançamos hoje confiando que Deus dará crescimento no tempo certo.<br><br>
+
+    📖 “O que semeia com fartura, com abundância também colherá.”<br>
+    <em>(2 Coríntios 9:6)</em><br><br>
+
+    Quem semeia com o coração no altar, colhe para a eternidade.
+  `;
+} else if (tipo === 'maturidade') {
+  titulo.textContent = 'Maturidade';
+  texto.innerHTML = `
+    Maturidade em Deus é crescer além das emoções, firmando-se na Palavra e na vontade d’Ele. É escolher obedecer mesmo quando não sentimos vontade, porque O amamos.<br><br>
+
+    📖 “Quando eu era menino, falava como menino… mas, logo que cheguei a ser homem, acabei com as coisas de menino.”<br>
+    <em>(1 Coríntios 13:11)</em><br><br>
+
+    Crescer em Cristo é deixar o raso e ir para o profundo.
+  `;
+}
+
+  
+      document.getElementById('modalPrincipio').style.display = 'block';
+    }
+  
+    function fecharModalPrincipio() {
+      document.getElementById('modalPrincipio').style.display = 'none';
+    }
+  
+    // Fecha se clicar fora do modal
+    window.onclick = function(event) {
+      const modalHistoria = document.getElementById('modalHistoria');
+      const modalPrincipio = document.getElementById('modalPrincipio');
+      if (event.target === modalHistoria) {
+        modalHistoria.style.display = 'none';
+      } else if (event.target === modalPrincipio) {
+        modalPrincipio.style.display = 'none';
+      }
+    }
+  </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper-container', {
+      slidesPerView: 3,
+      spaceBetween: 10,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      breakpoints: {
+        1024: { slidesPerView: 3 },
+        768: { slidesPerView: 2 },
+        0: { slidesPerView: 1 }
+      }
+    });
+    
+  </script>
+
+<section class="programacoes">
+  <h2>Recursos</h2>
+  <div class="cards-duplos">
+    <a href="https://www.instagram.com/ministeriogratos_?igsh=ZG9iNTg1eXVxdmJ4" target="_blank" class="card-programacao">
+      <img src="programacao.jpg" alt="Programação">
+      <h3>Programações</h3>
+    </a>
+    <a href="https://www.bibliaonline.com.br/" target="_blank" class="card-biblia">
+      <img src="biblia.png" alt="Bíblia Online">
+      <h3>Bíblia Online</h3>
+    </a>
+  </div>
+</section>
+<section class="evangelismo">
+  <h2>Evangelismo</h2>
+  <p class="evangelismo-texto">
+    “Ide por todo o mundo e pregai o evangelho a toda criatura.” <br>
+     - Marcos 16:15  </p>
+  <p class="etexto"> O evangelismo é o coração da missão da igreja. É por meio dele que levamos as boas novas de Jesus Cristo ao mundo, proclamando o amor, a graça e a salvação disponíveis a todos que creem.
+      Como igreja, temos o compromisso de alcançar vidas, sair das quatro paredes e tocar corações através da Palavra de Deus, ações sociais e orações.
+      Cada semente plantada, cada palavra compartilhada, é um ato de fé que pode transformar destinos eternos. O evangelismo não é uma opção — é um chamado.</p>
+
+    <div class="mosaico-evangelismo">
+      <img src="evangelismo1.jpg" alt="Evangelismo 1">
+      <img src="evangelismo2.jpg" alt="Evangelismo 2">
+      <img src="evangelismo3.jpg" alt="Evangelismo 3">
+      <img src="evangelismoa.jpg" alt="Evangelismo 4">
+      <img src="evangelismo5.jpg" alt="Evangelismo 5">
+      <img src="evangelismox.jpg" alt="Evangelismo 5">
+      <img src="evangelismob.jpg" alt="Evangelismo 5">
+      <img src="evangelismo4.jpg" alt="Evangelismo 5">
+      <img src="evangelismoy.jpg" alt="Evangelismo 5">
+      <img src="evangelismo6.jpg" alt="Evangelismo 5">
+      <img src="evangelismo7.jpg" alt="Evangelismo 5">
+      <img src="evangelismo8.jpg" alt="Evangelismo 5">
+      <!-- Adicione mais imagens conforme necessário -->
+    </div>
+  </section>
+  <section class="doacao-secao">
+    <h2><u>Ofertas & Semeadura</u></h2>
+    <div class="doacao-cards">
+      
+      <!-- Doação por Pix -->
+      <div class="card-doacao" onclick="mostrarQRCode()">
+        <img src="oferta.jpg" alt="Doação por Pix" />
+        <h3>Doar por Pix</h3>
+      </div>
+  
+      <!-- Semeadura (WhatsApp) -->
+      <div class="card-doacao" onclick="abrirWhatsApp(554188222086)">
+        <img src="semeadura.jpg" alt="Contato para Semeadura" />
+        <h3>Semeadura </h3>
+      </div>
+  
+    </div>
+  
+    <!-- QR Code oculto (aparece ao clicar no Pix) -->
+    <div id="qrCodeContainer" style="display:none;" class="qr-code-box">
+      <h4>Escaneie e doe com Pix: igreja.gratos@gmail.com </h4>
+      <img src="pix.jpg" alt="QR Code Pix" />
+    </div>
+  </section>
+  <script>
+    function mostrarQRCode() {
+      const qr = document.getElementById("qrCodeContainer");
+      qr.style.display = qr.style.display === "none" ? "block" : "none";
+    }
+  
+    function abrirWhatsApp() {
+      window.open("https://wa.me/5541988222086", "_blank");
+    }
+  </script>
+  
+
+ <footer class="rodape">
+  <div class="rodape-container">
+    <img src="logo.png.jpg" alt="Ministério Gratos" class="rodape-logo" />
+    <p class="rodape-frase">"Tudo o que fizerem, façam de todo o coração, como para o Senhor." — Colossenses 3:23</p>
+    <div class="rodape-contato">
+      <h3> CULTO TODOS OS DOMINGOS ÀS 19H30.<br>
+        João Paoli Filho, 250 - Jardim Paranaguá.
+      </h3>
+      <p>Instagram: @ministeriogratos_</p>
+      <p>by liaflowers</p>
+    </div>
+    <p class="copyright">© 2025 Ministério Gratos. Todos os direitos reservados.</p>
+  </div>
+</footer>
+<script>
+  const versiculos = [
+    '"O Senhor é o meu pastor; de nada terei falta." — Salmos 23:1',
+    '"Tudo posso naquele que me fortalece." — Filipenses 4:13',
+    '"Entrega o teu caminho ao Senhor; confia nele, e ele o fará." — Salmos 37:5',
+    '"Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito..." — João 3:16',
+    '"O choro pode durar uma noite, mas a alegria vem pela manhã." — Salmos 30:5',
+    '"Confia no Senhor de todo o teu coração e não te apoies no teu próprio entendimento." — Provérbios 3:5',
+    '"Busquem, pois, em primeiro lugar o Reino de Deus e a sua justiça..." — Mateus 6:33'
+  ];
+
+  let indice = 0;
+  const elemento = document.getElementById("versiculo");
+
+  function trocarVersiculo() {
+    elemento.style.opacity = 0;
+    setTimeout(() => {
+      elemento.innerText = versiculos[indice];
+      elemento.style.opacity = 1;
+      indice = (indice + 1) % versiculos.length;
+    }, 500);
+  }
+
+  // Iniciar rotação
+  trocarVersiculo(); // Exibe o primeiro
+  setInterval(trocarVersiculo, 5000); // Troca a cada 10 segundos
+</script>
+ <script>
+
+
+
+function abrirModalProgramacao() {
+  // Lógica do modal de programação
+}
+
+function abrirModalBiblia() {
+  // Lógica do modal da bíblia
+}
+
+// Fecha o modal ao clicar fora
+window.onclick = function(event) {
+  const modalProgramacao = document.getElementById('modalProgramacao');
+  const modalBiblia = document.getElementById('modalBiblia');
+  if (event.target === modalProgramacao) {
+    modalProgramacao.style.display = 'none';
+  } else if (event.target === modalBiblia) {
+    modalBiblia.style.display = 'none';
+  }
+}
+
+
+
+ </script>
+</body>
+</html>

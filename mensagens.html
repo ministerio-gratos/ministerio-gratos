@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oração | Ministério Gratos</title>
+  <link rel="stylesheet" href="css.css" />
+</head>
+<body>
+
+<header class="cabecalho-fixo">
+  <nav class="menu-fixo">
+    <div class="menu-container">
+      <img src="logo.png.jpg" alt="Ministerio Gratos" class="logo-menu" />
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="contato.html">Redes Sociais</a></li>
+        <li><a href="mensagens.html">Oração</a></li>
+        <li><a href="horarios.html">Endereço</a></li>
+        <li><a href="novos.membros.html">Caminhe conosco</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<section class="principal" style="margin-top: 100px; margin-bottom: 1px; background-size: 50%;">
+  <div class="oração">
+    <h1>Pedido de Oração</h1>
+    <p>Envie seu nome ou o nome de alguém para incluir em nossas orações.</p>
+
+    <!-- Formulário de oração -->
+    <form id="formOracao" onsubmit="enviarParaWhatsapp(); return false;" style="max-width: 500px; margin: 0 auto;">
+        <input type="text" id="nome" placeholder="Seu nome" required
+          style="width: 100%; color: black; padding: 12px; margin-bottom: 15px; border: none; border-radius: 5px;" />
+        <textarea id="pedido" placeholder="Essa oração é por um motivo específico? Qual?" rows="5" required
+          style="width: 100%;color: black; padding: 12px; border: none; border-radius: 5px;"></textarea>
+        <button type="submit"
+          style="background-color: #dd6c03; color: black; padding: 12px 20px; border: none; border-radius: 5px; font-weight: bold; margin-top: 15px; cursor: pointer;">Enviar Pedido</button>
+      </form>
+      
+
+  </div>
+</section>
+
+<footer class="rodape" style="margin-top: 10px ;">
+  <div class="rodape-container">
+    <img src="logo.png.jpg" alt="Ministério Gratos" class="rodape-logo" />
+    <p class="rodape-frase">"Tudo o que fizerem, façam de todo o coração, como para o Senhor." — Colossenses 3:23</p>
+    <p class="copyright">© 2025 Ministério Gratos. Todos os direitos reservados.</p>
+  </div>
+</footer>
+<script>
+    function enviarParaWhatsapp() {
+      const nome = document.getElementById("nome").value;
+      const pedido = document.getElementById("pedido").value;
+  
+      const numeroWhatsApp = "554188222086"; 
+      const mensagem = `Novo Pedido de Oração:\n\nNome: ${nome}\nPedido: ${pedido}`;
+      const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+  
+      window.open(url, '_blank');
+    }
+  </script>
+  
+
+</body>
+</html>
