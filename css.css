@@ -123,7 +123,6 @@ body {
   padding: 0;
 
   gap: 40px;
-  flex-wrap: wrap;
 
 }
 
@@ -1368,11 +1367,14 @@ body {
 
     text-align: center;
 
+    flex-wrap: nowrap;
+
     color: #f17b0b;
 
-    font-size: 50px;
+    font-size: 40px;
 
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    
 
   }
 
@@ -1415,6 +1417,7 @@ body {
   .escola h1 {
 
     text-align: center;
+    flex-wrap: nowrap;
 
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
